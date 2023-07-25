@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-"""
-pascal trinagle
-"""
+'''A module for working with Pascal's triangle.
+'''
 
 
 def pascal_triangle(n):
