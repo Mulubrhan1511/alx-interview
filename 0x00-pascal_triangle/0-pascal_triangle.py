@@ -5,24 +5,13 @@ pascal trinagle
 
 
 def pascal_triangle(n):
-    my_list = []
-    new_list = []
-    for i in range(n):
-        
-        if i >= 2:
-            for j in range(len(new_list)):
-               print(i)
-        else:
-            
-            if i> 0:
-                new_list = []
-                for j in range(i+1):
-                    new_list.append(1)
-            else:
-                new_list = []
-                new_list.append(1)
-            if new_list:
-                my_list.append(new_list)
-        
-    return my_list
-print(pascal_triangle(5))
+    if n <= 0:
+        return []
+    triangle = [[1]]
+    for i in range(1, n):
+        row = [1]
+        for j in range(1, i):
+            row.append(triangle[i-1][j-1] + triangle[i-1][j])
+        row.append(1)
+        triangle.append(row)
+    return triangle
